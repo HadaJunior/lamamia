@@ -2,6 +2,7 @@
 
 import styles from "./navbar.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -35,7 +36,10 @@ const links = [
     url: "/dashboard",
   },
 ];
+
 const NavBar = () => {
+  const pathname = usePathname();
+
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
